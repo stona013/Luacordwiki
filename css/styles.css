@@ -106,3 +106,9 @@ footer {
 .button:hover {
   background-color: var(--nav-link-hover);
 }
+img {
+  max-width: 100%; /* Bild passt sich der Bildschirmbreite an */
+  height: auto; /* Verhältnis bleibt gleich */
+  display: block; /* Verhindert, dass das Bild neben Text schwebt */
+  margin: 10px auto; /* Zentriere das Bild mit Abständen */
+}
