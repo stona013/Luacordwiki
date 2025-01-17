@@ -2,6 +2,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Luacord Wiki</title>
+  <script src="../js/theme-toggle.js" defer></script>
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 
@@ -9,10 +10,11 @@
   <h1>Luacord Wiki</h1>
   <nav>
     <a href="index.html">Startseite</a>
-    <a href="pages/AurionViloria.html">Aurion Viloria</a>
-    <a href="pages/Viloria.html">Viloria</a> <!-- Der Link zu der Seiten URL wurde korrigiert -->
+    <button id="theme-toggle">🌞/🌙</button>
   </nav>
 </header>
+
+
 
 
 <p dir="auto"><strong>Titel</strong>: Der Ewige König, Hüter des Nordens, Sonnenwächter<br>
@@ -24,10 +26,6 @@
 <h4 data-heading="**Hintergrund**" dir="auto"><strong>Hintergrund</strong></h4>
 <p dir="auto"><a data-href="Aurion Viloria" href="Aurion Viloria" class="internal-link" target="_blank" rel="noopener nofollow">Aurion Viloria</a> war einst ein Krieger der <a data-href="Titankin" href="Titankin" class="internal-link" target="_blank" rel="noopener nofollow">Titankin</a>, der in den letzten Tagen des Krieges gegen die <a data-href="Ur-Elementare" href="Ur-Elementare" class="internal-link" target="_blank" rel="noopener nofollow">Ur-Elementare</a> lebte. Als die Welt unter der Macht dieser uralten Kräfte zu zerbrechen drohte, sammelte er die Überlebenden seines Volkes und führte sie durch eine zerstörte Landschaft in die nördlichen Regionen von <a data-href="Ion" href="Ion" class="internal-link" target="_blank" rel="noopener nofollow">Ion</a>. Dort, inmitten von Bergen, Tälern und Flüssen, gründete er das Königreich <a data-href="Viloria" href="Viloria" class="internal-link" target="_blank" rel="noopener nofollow">Viloria</a>, benannt nach sich selbst, um seinem Volk Sicherheit und eine neue Heimat zu geben.</p>
 <p dir="auto">Anfangs war Aurion ein weiser und tapferer Führer, der sich dem Wiederaufbau widmete und eine Ära der Stabilität einleitete. Doch die Furcht vor dem Tod und dem Verlust dessen, was er geschaffen hatte, ließ ihn nach Wegen suchen, um sein Leben zu verlängern. Seine Suche führte ihn schließlich zu einem der letzten <a data-href="Titanen" href="Titanen" class="internal-link" target="_blank" rel="noopener nofollow">Titanen</a>, einem mächtigen Wesen namens <a data-href="Korthanax" href="Korthanax" class="internal-link" target="_blank" rel="noopener nofollow">Korthanax</a>, das sich tief in den <a data-href="Lichtspitze" href="Lichtspitze" class="internal-link" target="_blank" rel="noopener nofollow">Lichtspitze</a>-Bergen verborgen hielt.</p>
-<hr>
-<h4 data-heading="**[[Korthanax]] Pakt**" dir="auto"><strong><a data-href="Korthanax" href="Korthanax" class="internal-link" target="_blank" rel="noopener nofollow">Korthanax</a> Pakt</strong></h4>
-<p dir="auto">Um ewiges Leben zu erlangen, schloss Aurion einen Pakt mit <a data-href="Korthanax" href="Korthanax" class="internal-link" target="_blank" rel="noopener nofollow">Korthanax</a>. Im Austausch für die Unsterblichkeit opferte er seine ersten sechs Kinder und die Königin, die ihn bei der Gründung von <a data-href="Viloria" href="Viloria" class="internal-link" target="_blank" rel="noopener nofollow">Viloria</a> begleitet hatte. <a data-href="Korthanax" href="Korthanax" class="internal-link" target="_blank" rel="noopener nofollow">Korthanax</a>, ein Titan von Macht und erschreckender Weisheit, gewährte Aurion seine Wünsche – jedoch nicht ohne Konsequenzen. Aurion erhielt nicht nur ewiges Leben, sondern auch immense körperliche Stärke und die Fähigkeit, niemals zu altern. Doch der Preis dieses Pakts lastet schwer auf ihm: Schuldgefühle und die unheimliche Verbindung zu <a data-href="Korthanax" href="Korthanax" class="internal-link" target="_blank" rel="noopener nofollow">Korthanax</a> haben ihn langsam in den Wahnsinn getrieben.</p>
-<p dir="auto">Der Titan selbst ist seit Jahrhunderten in der östlichen Wildnis hinter den <a data-href="Lichtspitze" href="Lichtspitze" class="internal-link" target="_blank" rel="noopener nofollow">Lichtspitze</a>-Bergen verborgen. Einige glauben, dass <a data-href="Korthanax" href="Korthanax" class="internal-link" target="_blank" rel="noopener nofollow">Korthanax</a> in einem ewigen Schlummer liegt, andere vermuten, dass er aktiv das Schicksal von <a data-href="Viloria" href="Viloria" class="internal-link" target="_blank" rel="noopener nofollow">Viloria</a> beeinflusst. Aurion spürt seine Präsenz immer wieder – eine stille, aber unaufhörliche Erinnerung an die Schuld, die er trägt, und die Macht, die über ihm schwebt.</p>
 <hr>
 <h4 data-heading="**Die Legende vom Ewigen König**" dir="auto"><strong>Die Legende vom Ewigen König</strong></h4>
 <p dir="auto">In der Öffentlichkeit erzählt man sich eine andere Geschichte: Der Ewige König sei von den <a data-href="Gin" href="Gin" class="internal-link" target="_blank" rel="noopener nofollow">Gin</a> oder der Sonne selbst gesegnet worden, um <a data-href="Viloria" href="Viloria" class="internal-link" target="_blank" rel="noopener nofollow">Viloria</a> für immer zu beschützen. Dieser göttliche Segen soll sein Altern gestoppt haben und ihm die Fähigkeit verliehen, über Jahrhunderte hinweg mit unerschütterlicher Weisheit zu regieren. Diese Legende wird von Aurion selbst genährt, und das Volk verehrt ihn als gottähnliche Figur.</p>
@@ -41,6 +39,8 @@
 <p dir="auto">Aurion hat zwar eine neue Königsfamilie gegründet, doch er betrachtet diese mehr als politische Schachfiguren denn als Nachfolger. Jeder im Land weiß, dass die „Sonnenprinzen und -Prinzessinnen“ niemals den Thron besteigen werden, solange Aurion lebt. Diese Tatsache hat Spannungen innerhalb der königlichen Familie erzeugt, insbesondere bei den älteren Kindern, die sich in ihren Aufgaben und Rollen eingeschränkt fühlen. </p>
 <p dir="auto"></p><div src="attachment/92d2df3fe13a8fa5371f2604143a2ada.png" class="internal-embed"></div><p dir="auto"></p>
 
+
 <footer>
     <p>&copy; Luacord Wiki</p>
   </footer>
+  

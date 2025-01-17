@@ -1,40 +1,108 @@
-/* styles.css */
-
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-  }
-  
-  nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
-  .content {
-    padding: 20px;
-  }
-  
-  footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light Mode (Default) */
+:root {
+  --bg-color: #f4f4f4;
+  --text-color: #000;
+  --header-bg-color: #333;
+  --header-text-color: white;
+  --footer-bg-color: #333;
+  --footer-text-color: white;
+  --nav-link-color: white;
+  --nav-link-hover: #ddd;
+}
+
+/* Dark Mode */
+:root[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --header-bg-color: #1a1a1a;
+  --header-text-color: #f1f1f1;
+  --footer-bg-color: #1a1a1a;
+  --footer-text-color: #f1f1f1;
+  --nav-link-color: #ffffff;
+  --nav-link-hover: #bbb;
+}
+
+/* Apply Theme Variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Standard-Styling für Links mit der Klasse internal-link */
+.internal-link {
+  color: #227db9f5; /* Blaue Farbe für Links */
+  text-decoration: none; /* Entfernt die Unterstreichung */
+  font-weight: bold; /* Macht den Text fett */
+  transition: color 0.3s; /* Animiert Farbänderungen */
+}
+
+/* Hover-Effekt für die Links */
+.internal-link:hover {
+  color: #0e2296; /* Dunkleres Blau beim Hover */
+  text-decoration: underline; /* Unterstreicht den Link beim Hover */
+}
+
+/* Dark-Mode-spezifisches Styling */
+body.dark-mode .internal-link {
+  color: #80dfff; /* Helle Blau-Farbe im Dark-Mode */
+}
+
+body.dark-mode .internal-link:hover {
+  color: #1ab2ff; /* Leuchtenderes Blau beim Hover im Dark-Mode */
+}
+
+
+header {
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav a {
+  color: var(--nav-link-color);
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+nav a:hover {
+  color: var(--nav-link-hover);
+}
+
+footer {
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: var(--nav-link-hover);
+}
