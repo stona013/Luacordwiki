@@ -17,8 +17,8 @@ body {
   --footer-text-color: white;
   --nav-link-color: white;
   --nav-link-hover: #ddd;
-  --button-bg-color: #333;
-  --button-hover-bg-color: #555;
+  --button-bg-color: #2d4453;
+  --button-hover-bg-color: #17232b;
   --list-bg-color: white; /* Hintergrundfarbe der Listen im Light Mode */
   --list-text-color: black; /* Textfarbe der Listen im Light Mode */
   --list-border-color: #ddd; /* Randfarbe der Listen im Light Mode */
@@ -34,8 +34,8 @@ body {
   --footer-text-color: #f1f1f1;
   --nav-link-color: #ffffff;
   --nav-link-hover: #bbb;
-  --button-bg-color: #444;
-  --button-hover-bg-color: #666;
+  --button-bg-color: #2d4453;
+  --button-hover-bg-color: #17232b;
   --list-bg-color: #17232b; /* Hintergrundfarbe der Listen im Dark Mode */
   --list-text-color: white; /* Textfarbe der Listen im Dark Mode */
   --list-border-color: #555; /* Randfarbe der Listen im Dark Mode */
@@ -157,11 +157,11 @@ body.has-navbar-fixed-top {
 
 /* Titel Styling (links) */
 .custom-header .title {
-  margin: 0;
-  font-size: 1.2rem;
+  margin: 1;
+  font-size: 1.5rem;
   color: var(--header-text-color);
   position: absolute;
-  left: 10px;
+  left: 5px;
 }
 
 /* Navigation (Buttons) Styling (rechts) */
