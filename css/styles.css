@@ -19,11 +19,14 @@ body {
   --nav-link-hover: #ddd;
   --button-bg-color: #333;
   --button-hover-bg-color: #555;
+  --list-bg-color: white; /* Hintergrundfarbe der Listen im Light Mode */
+  --list-text-color: black; /* Textfarbe der Listen im Light Mode */
+  --list-border-color: #ddd; /* Randfarbe der Listen im Light Mode */
 }
 
 /* Dark Mode */
 :root[data-theme="dark"] {
-  --bg-color: #121212;
+  --bg-color: #0b1115;
   --text-color: #ffffff;
   --header-bg-color: #1a1a1a;
   --header-text-color: #f1f1f1;
@@ -33,6 +36,9 @@ body {
   --nav-link-hover: #bbb;
   --button-bg-color: #444;
   --button-hover-bg-color: #666;
+  --list-bg-color: #17232b; /* Hintergrundfarbe der Listen im Dark Mode */
+  --list-text-color: white; /* Textfarbe der Listen im Dark Mode */
+  --list-border-color: #555; /* Randfarbe der Listen im Dark Mode */
 }
 
 /* Apply Theme Variables */
@@ -91,7 +97,6 @@ body.dark-mode .internal-link:hover {
   color: white !important;
 }
 
-
 /* Button Container */
 .button-container {
   display: flex;
@@ -114,6 +119,7 @@ body.dark-mode .internal-link:hover {
   background-color: var(--button-hover-bg-color);
 }
 
+/* Seite ohne Scrollen */
 html, body {
   height: 100%;
   margin: 0;
@@ -121,6 +127,7 @@ html, body {
   overflow: hidden; /* Kein Scrollen außerhalb des Layouts zulassen */
 }
 
+/* Flexbox Layout für vollen Bildschirm */
 .section.is-fullheight {
   display: flex;
   justify-content: center;
@@ -186,6 +193,7 @@ body.has-navbar-fixed-top {
   color: var(--header-text-color);
 }
 
+/* Footer Styling */
 footer {
   position: fixed; /* Fixiert den Footer am unteren Rand */
   bottom: 0;
@@ -199,7 +207,6 @@ footer {
   z-index: 1000; /* Sicherstellen, dass der Footer immer oben liegt */
 }
 
-
 /* Style the side navigation */
 .sidenav {
   height: calc(100% - 60px - 42px); /* Platz für Header und Footer freihalten */
@@ -207,10 +214,9 @@ footer {
   bottom: 42px; /* Direkt oberhalb des Footers enden */
   width: 200px;
   position: fixed;
-  background-color: #111;
+  background-color: #2d4453;
   overflow-y: auto; /* Falls die Sidebar zu viele Links hat */
 }
-
 
 /* Side navigation links */
 .sidenav a {
@@ -234,4 +240,52 @@ footer {
   overflow-y: auto; /* Scrollbar, falls Inhalt zu groß wird */
   height: calc(100vh - 60px - 42px); /* Verbleibende Höhe zwischen Header und Footer */
   box-sizing: border-box; /* Padding wird in die Höhe mit eingerechnet */
+}
+
+/* Zentrierte Listen für Orte auf Lua */
+.lists-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /* Für responsives Design */
+  margin-top: 30px; /* Abstand zum Titel */
+}
+
+.list {
+  flex: 1 1 22%; /* Jede Liste nimmt mindestens 22% der Breite ein */
+  background-color: var(--list-bg-color); /* Hintergrundfarbe basierend auf dem Theme */
+  color: var(--list-text-color); /* Textfarbe basierend auf dem Theme */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--list-border-color); /* Randfarbe basierend auf dem Theme */
+  text-align: left;
+}
+
+/* Liste Überschrift */
+.list h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Listenpunkte ohne Aufzählungszeichen */
+.list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list ul li {
+  margin-bottom: 8px;
+}
+
+/* Responsives Design für kleinere Bildschirme */
+@media (max-width: 768px) {
+  .lists-container {
+    flex-direction: column;
+  }
+
+  .list {
+    flex: 1 1 100%; /* Jede Liste nimmt jetzt 100% der Breite ein */
+    margin-bottom: 20px;
+  }
 }
