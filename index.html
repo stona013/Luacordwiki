@@ -3,34 +3,65 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Luacord Wiki</title>
   <script src="js/theme-toggle.js" defer></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-  <header>
-    <h1>Luacord Wiki</h1>
-    <nav>
-      <a href="index.html">Startseite</a>
-      <button id="theme-toggle">🌞/🌙</button>
-    </nav>
+  <header class="custom-header" style="background-color: #4a4a4a;">
+    <div class="container">
+      <!-- Titel links ausrichten -->
+      <h1 class="title is-4" style="color: white;">Luacord Wiki</h1>
+  
+    <!-- Navigation (Buttons) rechts ausrichten -->
+<nav class="buttons is-justify-content-flex-end">
+  <a href="index.html" class="button is-light">Startseite</a>
+  <button id="theme-toggle" class="button">🌞/🌙</button>
+</nav>
+
+    </div>
   </header>
 
-  <div class="content">
-    <h1>Willkommen auf der Luacord Wiki</h1>
-    <p>Entdecke die Welt von Lua...</p>
-    <div class="button-container">
-      <a href="Persoenlichkeiten.html" class="button">Persönlichkeiten</a>
-      <a href="places.html" class="button">Orte</a>
+  <!-- Content -->
+  <section class="section" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+    <div class="container has-text-centered">
+      <h1 class="title">Willkommen auf der Luacord Wiki</h1>
+      <p class="subtitle">Entdecke die Welt von Lua...</p>
+      <hr>
+      <div class="buttons is-centered">
+        <a href="Persoenlichkeiten.html" class="button is-link is-medium">Persönlichkeiten</a>
+      </div>
+      <hr>
+      <div class="buttons is-centered">
+        <a href="places.html" class="button is-link is-medium">Orte</a> 
     </div>
+    <hr>
+    <div class="buttons is-centered">
+      <a href="places.html" class="button is-link is-medium">Gruppierungen</a> 
   </div>
+  <hr>
+  <div class="buttons is-centered">
+    <a href="places.html" class="button is-link is-medium">Völker</a> 
+</div>
+<hr>
+<div class="buttons is-centered">
+  <a href="places.html" class="button is-link is-medium">Lua Homebrew</a> 
+</div>
+  <hr>
+  <div class="buttons is-centered">
+    <a href="places.html" class="button is-link is-medium">Die Ebenen er Exisitenz</a> 
+</div>
+  </section>
+  
 
-  <footer>
-    <p>&copy; Luacord Wiki</p>
+  <!-- Footer -->
+  <footer class="footer" style="background-color: #4a4a4a; color: white; padding: 10px 0; font-size: 0.9rem; height: auto;">
+    <div class="content has-text-centered">
+      <p>&copy; Luacord Wiki</p>
+    </div>
   </footer>
+  
 </body>
 
 </html>

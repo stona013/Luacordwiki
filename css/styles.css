@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   transition: background-color 0.3s, color 0.3s;
+  padding-top: 0; /* Entfernt oberen Abstand */
 }
 
 /* Light Mode (Default) */
@@ -16,6 +17,8 @@ body {
   --footer-text-color: white;
   --nav-link-color: white;
   --nav-link-hover: #ddd;
+  --button-bg-color: #333;
+  --button-hover-bg-color: #555;
 }
 
 /* Dark Mode */
@@ -28,6 +31,8 @@ body {
   --footer-text-color: #f1f1f1;
   --nav-link-color: #ffffff;
   --nav-link-hover: #bbb;
+  --button-bg-color: #444;
+  --button-hover-bg-color: #666;
 }
 
 /* Apply Theme Variables */
@@ -36,56 +41,45 @@ body {
   color: var(--text-color);
 }
 
-/* Standard-Styling für Links mit der Klasse internal-link */
+.title, .subtitle {
+  color: var(--text-color);
+}
+
+/* Links Styling */
 .internal-link {
-  color: #227db9f5; /* Blaue Farbe für Links */
-  text-decoration: none; /* Entfernt die Unterstreichung */
-  font-weight: bold; /* Macht den Text fett */
-  transition: color 0.3s; /* Animiert Farbänderungen */
+  color: #227db9f5;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-/* Hover-Effekt für die Links */
 .internal-link:hover {
-  color: #0e2296; /* Dunkleres Blau beim Hover */
-  text-decoration: underline; /* Unterstreicht den Link beim Hover */
+  color: #0e2296;
+  text-decoration: underline;
 }
 
-/* Dark-Mode-spezifisches Styling */
 body.dark-mode .internal-link {
-  color: #80dfff; /* Helle Blau-Farbe im Dark-Mode */
+  color: #80dfff;
 }
 
 body.dark-mode .internal-link:hover {
-  color: #1ab2ff; /* Leuchtenderes Blau beim Hover im Dark-Mode */
+  color: #1ab2ff;
+}
+
+/* Immer schwarzer Button für Startseite */
+.button.is-light.is-medium {
+  background-color: black !important;
+  color: white !important;
+  border: none !important;
+}
+
+.button.is-light.is-medium:hover {
+  background-color: #333 !important;
+  color: white !important;
 }
 
 
-header {
-  background-color: var(--header-bg-color);
-  color: var(--header-text-color);
-  padding: 10px 0;
-  text-align: center;
-}
-
-nav a {
-  color: var(--nav-link-color);
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-nav a:hover {
-  color: var(--nav-link-hover);
-}
-
-footer {
-  background-color: var(--footer-bg-color);
-  color: var(--footer-text-color);
-  text-align: center;
-  padding: 10px 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
+/* Button Container */
 .button-container {
   display: flex;
   gap: 10px;
@@ -96,7 +90,7 @@ footer {
 .button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: var(--header-bg-color);
+  background-color: var(--button-bg-color);
   color: var(--header-text-color);
   text-decoration: none;
   border-radius: 5px;
@@ -104,11 +98,91 @@ footer {
 }
 
 .button:hover {
-  background-color: var(--nav-link-hover);
+  background-color: var(--button-hover-bg-color);
 }
-img {
-  max-width: 100%; /* Bild passt sich der Bildschirmbreite an */
-  height: auto; /* Verhältnis bleibt gleich */
-  display: block; /* Verhindert, dass das Bild neben Text schwebt */
-  margin: 10px auto; /* Zentriere das Bild mit Abständen */
+
+/* Flexbox Layout für vollen Bildschirm */
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
+
+.section.is-fullheight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  flex-grow: 1;
+}
+
+/* Navbar Fixed Top */
+body.has-navbar-fixed-top {
+  padding-top: 0; /* Entfernt das Padding, das von der fixierten Navbar erzeugt wird */
+}
+
+/* Header Styling */
+.custom-header {
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
+  position: relative;
+  height: 60px; /* Höhe des Headers */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 10px;
+}
+
+/* Titel Styling (links) */
+.custom-header .title {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--header-text-color);
+  position: absolute;
+  left: 10px;
+}
+
+/* Navigation (Buttons) Styling (rechts) */
+.custom-header nav {
+  display: flex;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  gap: 10px; /* Standardmäßiger Abstand zwischen den Buttons */
+}
+
+/* Stil für Buttons im Header */
+.custom-header nav a, .custom-header nav button {
+  font-size: 0.8rem; /* Kleinere Schriftgröße */
+  padding: 4px 8px; /* Kleinere Buttons */
+  height: auto; /* Automatische Höhe */
+  line-height: 1; /* Kein zusätzlicher Abstand im Text */
+  border-radius: 4px; /* Runde Kanten */
+  background-color: var(--button-bg-color);
+  color: var(--header-text-color);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.custom-header nav a:hover, .custom-header nav button:hover {
+  background-color: var(--button-hover-bg-color);
+  color: var(--header-text-color);
+}
+
+/* Footer Styling */
+footer {
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto;
+  width: 100%;
+  font-size: 0.9rem;
+  height: auto;
+}
+
+
