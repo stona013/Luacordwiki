@@ -45,6 +45,19 @@ body {
   color: var(--text-color);
 }
 
+/* Überschreibt die Bulma-Standardfarbe für Titel */
+.content .title {
+  color: var(--text-color); /* Dynamische Textfarbe basierend auf dem Theme */
+  transition: color 0.3s; /* Sanfter Übergang bei Theme-Wechsel */
+}
+
+/* Globale Textfarbe für <strong>-Tags */
+strong {
+  color: var(--text-color); /* Nutzt die dynamische Textfarbe */
+  font-weight: bold; /* Behält das fettgedruckte Styling bei */
+  transition: color 0.3s; /* Weicher Übergang bei Theme-Wechsel */
+}
+
 /* Links Styling */
 .internal-link {
   color: #227db9f5;
@@ -101,11 +114,11 @@ body.dark-mode .internal-link:hover {
   background-color: var(--button-hover-bg-color);
 }
 
-/* Flexbox Layout für vollen Bildschirm */
 html, body {
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Kein Scrollen außerhalb des Layouts zulassen */
 }
 
 .section.is-fullheight {
@@ -156,8 +169,8 @@ body.has-navbar-fixed-top {
 
 /* Stil für Buttons im Header */
 .custom-header nav a, .custom-header nav button {
-  font-size: 0.8rem; /* Kleinere Schriftgröße */
-  padding: 4px 8px; /* Kleinere Buttons */
+  font-size: 1.3rem; /* Kleinere Schriftgröße */
+  padding: 15px 20px; /* Kleinere Buttons */
   height: auto; /* Automatische Höhe */
   line-height: 1; /* Kein zusätzlicher Abstand im Text */
   border-radius: 4px; /* Runde Kanten */
@@ -173,16 +186,52 @@ body.has-navbar-fixed-top {
   color: var(--header-text-color);
 }
 
-/* Footer Styling */
 footer {
+  position: fixed; /* Fixiert den Footer am unteren Rand */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 42px; /* Konsistente Höhe für den Footer */
   background-color: var(--footer-bg-color);
   color: var(--footer-text-color);
   text-align: center;
   padding: 10px 0;
-  margin-top: auto;
-  width: 100%;
-  font-size: 0.9rem;
-  height: auto;
+  z-index: 1000; /* Sicherstellen, dass der Footer immer oben liegt */
 }
 
 
+/* Style the side navigation */
+.sidenav {
+  height: calc(100% - 60px - 42px); /* Platz für Header und Footer freihalten */
+  top: 60px; /* Direkt unter dem Header beginnen */
+  bottom: 42px; /* Direkt oberhalb des Footers enden */
+  width: 200px;
+  position: fixed;
+  background-color: #111;
+  overflow-y: auto; /* Falls die Sidebar zu viele Links hat */
+}
+
+
+/* Side navigation links */
+.sidenav a {
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the content */
+.content {
+  margin-left: 200px; /* Platz für Sidebar */
+  margin-top: 60px; /* Platz für den Header */
+  padding: 20px; /* Zusätzlicher Innenabstand */
+  overflow-y: auto; /* Scrollbar, falls Inhalt zu groß wird */
+  height: calc(100vh - 60px - 42px); /* Verbleibende Höhe zwischen Header und Footer */
+  box-sizing: border-box; /* Padding wird in die Höhe mit eingerechnet */
+}
