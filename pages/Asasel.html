@@ -1,6 +1,7 @@
 <head>
   <meta charset="UTF-8">
   <script src="../js/theme-toggle.js" defer></script>
+  <script src="../js/fix-embeds.js" defer></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="../css/styles.css">
 </head>
@@ -25,7 +26,9 @@
 <body>
   <div class="content">
   <!-- Überschrift des Eintrags -->
-  <h1 class="title">Asasel 2</h1>
+  <h3 data-heading="**Name**" dir="auto"><strong>Name</strong></h3>
+<p dir="auto">Asasel</p>
+<hr>
 <h3 data-heading="**Spitzname/Pseudonym**" dir="auto"><strong>Spitzname/Pseudonym</strong></h3>
 <ul>
 <li dir="auto"><strong>Herrscher der Ascheinseln</strong></li>
@@ -44,72 +47,85 @@
 <hr>
 <h3 data-heading="**Alter**" dir="auto"><strong>Alter</strong></h3>
 <ul>
-<li dir="auto"><strong>Uralt</strong>: (Über 3000 Jahre Alt)</li>
+<li dir="auto"><strong>Über 3000 Jahre alt</strong></li>
 </ul>
 <hr>
-<h3 data-heading="**Vertreten**" dir="auto"><strong>Vertreten</strong></h3>
+<h3 data-heading="**Vertritt**" dir="auto"><strong>Vertritt</strong></h3>
 <ul>
-<li dir="auto"><strong>Ascheinsel</strong>: Eine Insel im Norden Vilorias, die von Fiends bevölkert ist.</li>
+<li dir="auto"><strong>Ascheinsel</strong> – Eine isolierte, von Teufel bevölkerte Insel im Norden von Viloria, bekannt für ihre vulkanische Landschaft und dunklen Rituale.</li>
 </ul>
 <hr>
 <h3 data-heading="**Aussehen**" dir="auto"><strong>Aussehen</strong></h3>
-<p dir="auto"><strong>Normale Form:</strong></p>
+<h4 data-heading="**Normale Gestalt**" dir="auto"><strong>Normale Gestalt</strong></h4>
 <ul>
-<li dir="auto">Humanoide Erscheinung mit schwarzen Flügeln, die an die eines gefallenen Engels erinnern.</li>
-<li dir="auto">Zwei Hörner ragen aus dem Kopf, ergänzt durch einen goldenen, leuchtenden Heiligenschein.</li>
-<li dir="auto">Trägt schwarze, bodenlange Gewänder und hält häufig ein magisches Buch.</li>
+<li dir="auto">Humanoide Gestalt mit schwarzen, gefiederten Flügeln, die an einen gefallenen Engel erinnern.</li>
+<li dir="auto">Zwei geschwungene Hörner ragen aus der Stirn, ein Kontrast zu dem schwach leuchtenden, goldenen Heiligenschein, der über ihnen schwebt.</li>
+<li dir="auto">Tiefrote Augen, die Emotionen nur andeuten, aber nie offenbaren.</li>
+<li dir="auto">Trägt bodenlange schwarze Gewänder mit feinen goldenen Verzierungen, oft ergänzt durch ein altes, verfluchtes Buch, das er stets bei sich trägt.</li>
 </ul>
-<p dir="auto"><strong>Fae-Fiend Form:</strong></p>
+<h4 data-heading="**Wahre Gestalt**" dir="auto"><strong>Wahre Gestalt</strong></h4>
 <ul>
-<li dir="auto">Humanoide Gestalt mit schwarzen Schmetterlingsflügeln.</li>
-<li dir="auto">Ein Elchschädel mit zwei Kiefern und einem massiven Geweih, wobei ein Teil des Geweihs abgebrochen ist.</li>
-<li dir="auto">Blasse Haut, umhüllt von dunklen, zeremoniellen Roben.</li>
+<li dir="auto">Seine ursprüngliche Feengestalt ist stark verzerrt: Er trägt einen Elchschädel mit zwei Kiefern und einem massiven, gesplitterten Geweih.</li>
+<li dir="auto">Blasse Haut mit unnatürlichen Rissen, aus denen dunkle Energie sickert.</li>
+<li dir="auto">Große, schwarze Schmetterlingsflügel, deren Muster hypnotisierend wirken.</li>
+<li dir="auto">Gekleidet in zeremonielle, zerfetzte Roben, die an ein Relikt vergangener Zeitalter erinnern.</li>
 </ul>
 <hr>
 <h3 data-heading="**Charakter**" dir="auto"><strong>Charakter</strong></h3>
-<p dir="auto">Asasel ist <strong>charmant</strong>, <strong>furchteinflößend</strong> und <strong>strategisch</strong>. Als <strong>Herrscher der Ascheinseln</strong> und ehemaliger <strong>Erzherzog der Dritten Ebene</strong> versteht er es, Macht nicht nur durch rohe Stärke, sondern auch durch die Manipulation von Gefühlen wie <strong>Furcht</strong> und <strong>Begehrlichkeit</strong> auszuüben. Seine Präsenz allein genügt, um bei anderen eine Mischung aus <strong>Ehrfurcht und Angst</strong> auszulösen, was ihn zu einem perfekten Manipulator macht.</p>
-<p dir="auto">Asasel sieht Kontrolle und Unterwerfung als den Schlüssel zur Ordnung. Er ist überzeugt, dass nur jemand mit seiner <strong>Kälte und Berechnung</strong> in der Lage ist, Stabilität und Macht in einer chaotischen Welt zu sichern. Trotz seiner <strong>charismatischen Fassade</strong> verbirgt sich eine unerbittliche Persönlichkeit, die keine Schwäche duldet. Er ist ein <strong>Meister der Täuschung</strong> und nutzt seine Fähigkeiten gezielt, um Feinde zu lähmen und Verbündete zu binden, immer mit einem klaren Ziel vor Augen: die langfristige Festigung seiner Herrschaft und den Schutz seiner Domäne.</p>
+<p dir="auto">Asasel ist ein <strong>Meister der Manipulation und Kontrolle</strong>. Sein Einfluss basiert nicht nur auf Macht, sondern auf der Fähigkeit, andere zu lenken – sei es durch Angst, Versuchung oder strategische Berechnung. Er versteht es, <strong>Emotionen zu unterdrücken oder zu verstärken</strong>, um seine Ziele zu erreichen, und zieht es vor, Konflikte durch geschickte Diplomatie oder Intrigen zu lösen, anstatt durch rohe Gewalt.</p>
+<p dir="auto">Er betrachtet <strong>Furcht und Verlangen</strong> als die stärksten Werkzeuge zur Machterhaltung. Wer ihn für einen impulsiven Tyrannen hält, hat ihn unterschätzt – Asasel handelt nicht aus Zorn oder Hass, sondern aus einer tief verwurzelten Überzeugung, dass <strong>Ordnung nur durch Kontrolle entstehen kann</strong>. Seine Weltanschauung ist kühl, logisch und auf langfristige Stabilität ausgerichtet.</p>
+<p dir="auto">Trotz seines distanzierten Auftretens besitzt er eine faszinierende Ausstrahlung, die andere in seinen Bann zieht. Seine Worte sind gewählt, seine Bewegungen präzise – nichts an ihm ist zufällig oder unbedacht. Doch unter dieser perfekt kontrollierten Fassade liegt ein Funken seines einstigen Selbst, ein Schatten der <strong>Erzfee, die er einst war</strong>, verborgen hinter jahrtausendalter Disziplin und Selbstkontrolle.</p>
 <hr>
 <h3 data-heading="**Glaube/Religion**" dir="auto"><strong>Glaube/Religion</strong></h3>
-<p dir="auto">Glaubt an keine Religion, betrachtet sich jedoch selbst als übernatürliches Wesen jenseits von göttlicher Macht</p>
+<ul>
+<li dir="auto"><strong>Glaubt an keine höhere Macht, sieht sich jedoch selbst als Wesen jenseits der Götter.</strong></li>
+<li dir="auto"><strong>Misstraut sterblichen Glaubenssystemen</strong>, da sie für ihn nur ein weiteres Mittel der Manipulation sind.</li>
+<li dir="auto">Hält sich an ein eigenes Kodex der Kontrolle und Machtbewahrung.</li>
+</ul>
 <hr>
 <h3 data-heading="**Hintergrundgeschichte**" dir="auto"><strong>Hintergrundgeschichte</strong></h3>
 <ul>
-<li dir="auto">Ursprünglich eine Erzfee der Begierde, die über Eschenfurt herrschte.</li>
-<li dir="auto">Unterstützte die Erzherzöge bei der Verbannung des Erzherzogs der Dritten Ebene und übernahm danach dessen Platz.</li>
-<li dir="auto">Im Krieg der Ascheinsel errang Asasel die Kontrolle über die Insel und übergab den Titel des Erzherzogs später an seinen mächtigsten Warlock.</li>
-<li dir="auto">Die Entscheidung, die Macht weiterzugeben, wurde strategisch getroffen, um sich vollständig auf die Sicherung und den Ausbau der Kontrolle über die Ascheinsel zu konzentrieren.</li>
+<li dir="auto">Einst eine mächtige <strong>Erzfee der Begierde</strong>, die über das Reich Eschenfurt herrschte.</li>
+<li dir="auto">Während eines Machtkampfes innerhalb der infernalen Hierarchien verriet er einen Erzherzog und half dabei, ihn aus der <strong>Dritten Ebene der Hölle</strong> zu verbannen.</li>
+<li dir="auto">Nach dem Fall seines Rivalen wurde ihm selbst der Titel <strong>Erzherzog der Dritten Ebene</strong> übertragen – ein Amt, das er mehrere Jahrhunderte lang innehatte.</li>
+<li dir="auto">Während des Krieges um die <strong>Ascheinsel</strong> nahm er die Kontrolle über die Region an sich, anstatt weiter in den höllischen Machträngen aufzusteigen.</li>
+<li dir="auto">Später gab er den Titel des Erzherzogs an einen mächtigen Warlock weiter, um sich auf seine eigene Domäne zu konzentrieren.</li>
 </ul>
 <hr>
-<h3 data-heading="**Verbindungen/Beziehungen**" dir="auto"><strong>Verbindungen/Beziehungen</strong></h3>
+<h3 data-heading="**Verbindungen / Beziehungen**" dir="auto"><strong>Verbindungen / Beziehungen</strong></h3>
 <ul>
-<li dir="auto"><strong>König von Viloria</strong>: Politische Verhandlungen und gelegentliche Konflikte um die nördlichen Grenzen.</li>
-<li dir="auto"><strong>Erzherzöge der Dritten, Vierten und Fünften Ebene</strong>: Teilweise Allianzen, teilweise Fehden, geprägt durch gegenseitige Machtansprüche.</li>
-<li dir="auto"><strong>Die Erzfeen von Eschenfurt</strong>: Früher ein Verbündeter, jetzt eine Quelle von Konflikten aufgrund von Asasels Verrat.</li>
-<li dir="auto">"<strong>Irgendwas Cooles</strong>"</li>
+<li dir="auto"><strong>König von Viloria</strong> – Politische Verhandlungen und gelegentliche Grenzkonflikte zwischen den Ascheinseln und dem Festland.</li>
+<li dir="auto"><strong>Erzherzöge der Dritten, Vierten und Fünften Ebene</strong> – Ehemalige Verbündete und Feinde, deren Machtinteressen sich oft mit seinen kreuzen.</li>
+<li dir="auto"><strong>Die Erzfeen von Eschenfurt</strong> – Einst seine Familie und Verbündete, nun seine ärgsten Widersacher nach seinem Verrat.</li>
+<li dir="auto"><strong>Der Pakt der Klingen und Kronen</strong> – Ein pragmatisches Bündnis, in dem er als einer der kältesten Strategen gilt.</li>
 </ul>
 <hr>
 <h3 data-heading="**Wichtige Ereignisse**" dir="auto"><strong>Wichtige Ereignisse</strong></h3>
 <ul>
-<li dir="auto"><strong>Schlacht von Memoria:</strong> Versiegelte eigene Emotionen und Gefühle, um strategisch kalt und unnachgiebig zu agieren.</li>
-<li dir="auto"><strong>Krieg der Ascheinsel:</strong> Führte die Truppen der Insel in den Kampf, errang die Herrschaft und machte die Insel zu einer Festung der Fiends.</li>
-<li dir="auto">Übernahm den Platz des Erzherzogs der Dritten Ebene und veränderte die Machtstrukturen, indem er den Titel strategisch delegierte. </li>
+<li dir="auto"><strong>Schlacht von Memoria</strong> – Um seine Kontrolle über die Dritte Ebene zu sichern, opferte er Teile seines eigenen Wesens und versiegelte seine Emotionen, um noch kälter und berechnender zu werden.</li>
+<li dir="auto"><strong>Der Krieg der Ascheinsel</strong> – Führte eine Armee aus Fiends und Verbündeten gegen rivalisierende Dämonen und Engel, um die Kontrolle über die Insel zu sichern.</li>
+<li dir="auto"><strong>Der Verrat von Eschenfurt</strong> – Sein endgültiger Bruch mit seiner alten Heimat, als er sich gegen die Erzfeen wandte und ihre Herrschaft untergrub.</li>
 </ul>
 <hr>
 <h3 data-heading="**Zitate**" dir="auto"><strong>Zitate</strong></h3>
 <ul>
-<li dir="auto">"Deine Ängste sind keine Schwäche. Sie sind der Spiegel meiner Macht."</li>
-<li dir="auto">"Niemand wird an meiner Seite stehen, der nicht gelernt hat, zuerst vor mir zu knien."</li>
+<li dir="auto"><strong>„Deine Ängste sind keine Schwäche. Sie sind der Spiegel meiner Macht.“</strong></li>
+<li dir="auto"><strong>„Niemand wird an meiner Seite stehen, der nicht gelernt hat, zuerst vor mir zu knien.“</strong></li>
+<li dir="auto"><strong>„Kontrolle ist keine Tyrannei. Kontrolle ist, was Chaos verhindert.“</strong></li>
+<li dir="auto"><strong>„Du glaubst, du hast mich durchschaut? Dann hast du noch nicht tief genug gesehen.“</strong></li>
+<li dir="auto"><strong>„Glaubst du wirklich, es gibt eine Wahrheit, die nicht von irgendjemandem geformt wurde?“</strong></li>
 </ul>
 <hr>
 <h3 data-heading="**Trivia**" dir="auto"><strong>Trivia</strong></h3>
 <ul>
-<li dir="auto">Asasel empfindet Abscheu vor unbedingter Aufrichtigkeit. Personen, die ihn ohne Angst und vollkommen ehrlich ansprechen, irritieren ihn und durchbrechen gelegentlich seine sonst perfekte Fassade.</li>
-<li dir="auto">Trotz seiner Erscheinung hat Asasel eine Vorliebe für bissigen und ironischen Humor, was seine Gegner oft verunsichert.</li>
-<li dir="auto">Musik – besonders aus uralten, längst vergessenen Kulturen – weckt in ihm Erinnerungen, die er sonst zu verdrängen versucht.</li>
-<li dir="auto">Selbst Wesen, die immun gegen Furcht sind, verspüren in Asasels Nähe ein unangenehmes Kribbeln oder unbewusste Nervosität</li>
-<li dir="auto">Das abgebrochene Geweih ist ein Relikt aus seiner Zeit als Erzfee. Es symbolisiert nicht nur seinen Verrat, sondern auch den Verlust seiner ursprünglichen Identität. Manche behaupten, es trägt einen Teil seiner versiegelten Emotionen.</li>
+<li dir="auto"><strong>Empfindet Aufrichtigkeit als irritierend.</strong> Wer ihm offen und ohne Angst begegnet, löst in ihm eine ungewöhnliche Unruhe aus.</li>
+<li dir="auto"><strong>Trotz seines düsteren Images besitzt er einen trockenen, ironischen Humor.</strong> Seine Bemerkungen sind oft subtil, aber scharf.</li>
+<li dir="auto"><strong>Musik aus vergangenen Zeitaltern fasziniert ihn.</strong> Sie erinnert ihn an Zeiten, die er lieber vergessen hätte.</li>
+<li dir="auto"><strong>Selbst Wesen, die gegen Angst immun sind, verspüren in seiner Nähe eine unerklärliche Beklemmung.</strong></li>
+<li dir="auto"><strong>Das abgebrochene Geweih an seinem Schädel ist ein Relikt seines Verrats an den Erzfeen.</strong> Es symbolisiert nicht nur seinen Machtgewinn, sondern auch den Verlust seiner ursprünglichen Identität.</li>
 </ul>
+<hr>
+<p dir="auto"><span src="attachment/2a428c89fb7033fe1912201eece09232.png" class="internal-embed"></span></p>
 <hr>
 </div>  
 </body>

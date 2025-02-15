@@ -22,6 +22,7 @@ body {
   --list-bg-color: white; /* Hintergrundfarbe der Listen im Light Mode */
   --list-text-color: black; /* Textfarbe der Listen im Light Mode */
   --list-border-color: #ddd; /* Randfarbe der Listen im Light Mode */
+  --hr-color: #202020; /* Hellgrau für Light Mode */
 }
 
 /* Dark Mode */
@@ -39,6 +40,14 @@ body {
   --list-bg-color: #17232b; /* Hintergrundfarbe der Listen im Dark Mode */
   --list-text-color: white; /* Textfarbe der Listen im Dark Mode */
   --list-border-color: #555; /* Randfarbe der Listen im Dark Mode */
+  --hr-color: #c9c9c9; /* Dunkleres Grau für Dark Mode */
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--hr-color);
+  margin: 20px 0;
 }
 
 /* Apply Theme Variables */
