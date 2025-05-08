@@ -2,6 +2,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const isProtected = document.body.dataset.protected === "true";
   if (!isProtected) return;
 
+// Master Password == 1303
+// Tessa ==  7355
+// Draco ==
+// Sera ==
+// Noel ==
+// Felx ==
+// Tim ==
+
   // Hole erlaubte PINs aus data-attribute (z. B. "1234,5678")
   const pinListRaw = document.body.dataset.allowedPins || "";
   const allowedPins = pinListRaw.split(",").map(pin => pin.trim());
