@@ -1,6 +1,8 @@
 <head>
   <meta charset="UTF-8">
   <script src="../js/theme-toggle.js" defer></script>
+  <script src="../js/fix-embeds.js" defer></script>
+  <script src="../js/article-protect.js" defer></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="../css/styles.css">
 </head>
@@ -22,51 +24,57 @@
   <a href="Ebenen.html">Die Ebenen der Existenz</a>
   <a href="places.html">Orte</a>
 </div>
-<body>
-  <div class="content">
+<body data-protected="true" data-allowed-pins="1303,2109">
+
+  <body>
+    <div class="content" id="protected-content">
   <!-- Überschrift des Eintrags -->
-  <h1 class="title">Viritus Blooded  Sorcerer</h1>
+  <h1 class="title">Viritus-Blooded Sorcerer</h1>
+<p dir="auto">The power of the <a data-href="Viritus" href="Viritus" class="internal-link" target="_blank" rel="noopener nofollow">Viritus</a> Clan flows through your veins, a result of the clan’s ancient and ruthless experiments conducted in pursuit of perfection and dominance. Originating from the Gin and residing on the continent of <a data-href="Sarra" href="Sarra" class="internal-link" target="_blank" rel="noopener nofollow">Sarra</a>, the Viritus Clan is one of the Sovereigns—a ruling elite whose influence and might shape the destiny of nations. Though the experiments of the Viritus Clan have long faded into history, their potent bloodline occasionally awakens within unsuspecting individuals, transforming them into vessels of decay and destruction.</p>
+<p dir="auto">When this dormant power manifests, it does so with dramatic and often terrifying results. The awakening might cause nearby plants to wither, metal objects to corrode, or even living creatures to fall ill. Such displays mark the individual as one of Viritus-blood, an event that does not go unnoticed. The High Houses of <a data-href="Sarra" href="Sarra" class="internal-link" target="_blank" rel="noopener nofollow">Sarra</a>, who maintain control over the Viritus legacy, swiftly claim these awakened individuals. Whether willingly or by force, those who carry this bloodline are taken from their families and brought to the High Houses to undergo rigorous training and indoctrination.</p>
+<p dir="auto">For those claimed by the High Houses, life becomes a delicate balance of privilege and servitude. The powers of the Viritus bloodline are revered and feared, granting their bearers a position of significance. Yet this comes at the cost of autonomy, as they are molded into tools for the clan’s ambitions. Some embrace this new life, finding pride in their heritage, while others resent the loss of their freedom, longing for the families and lives they were torn away from.</p>
+<hr>
 <h3 data-heading="**Viritus-Blooded Sorcerer Quirks**" dir="auto"><strong>Viritus-Blooded Sorcerer Quirks</strong></h3>
 <p dir="auto">Every Viritus-Blooded Sorcerer undergoes a dramatic transformation upon awakening their bloodline. <strong>Onyx-black horns</strong> sprout from their head, curving in shapes unique to each individual, and their <strong>eyes turn crimson</strong>, glowing faintly in dim light. Beyond these universal changes, the Viritus blood manifests uniquely in each sorcerer. Roll on the table below (or choose) to determine your additional quirk, if non suits you can disscuss another Quirk with your GM.</p>
 <table>
 <thead>
 <tr>
-<th><strong>d8</strong></th>
-<th><strong>Quirk</strong></th>
+<th>d8</th>
+<th>Quirk</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>1</strong></td>
-<td><strong>Your horns occasionally exude faint wisps of shadowy mist when you use magic.</strong></td>
+<td>1</td>
+<td>Your horns occasionally exude faint wisps of shadowy mist when you use magic.</td>
 </tr>
 <tr>
-<td><strong>2</strong></td>
-<td><strong>Your red eyes shift slightly, resembling the slitted pupils of a serpent or predator</strong></td>
+<td>2</td>
+<td>Your red eyes shift slightly, resembling the slitted pupils of a serpent or predator.</td>
 </tr>
 <tr>
-<td><strong>3</strong></td>
-<td><strong>Your skin takes on a faint sheen, as if dusted with fine black ash.</strong></td>
+<td>3</td>
+<td>Your skin takes on a faint sheen, as if dusted with fine black ash.</td>
 </tr>
 <tr>
-<td><strong>4</strong></td>
-<td><strong>Faint cracks, like fractured stone, appear on your horns or skin when you're angry.</strong></td>
+<td>4</td>
+<td>Faint cracks, like fractured stone, appear on your horns or skin when you're angry.</td>
 </tr>
 <tr>
-<td><strong>5</strong></td>
-<td><strong>When casting spells, your voice carries an otherworldly resonance, unsettling to hear.</strong></td>
+<td>5</td>
+<td>When casting spells, your voice carries an otherworldly resonance, unsettling to hear.</td>
 </tr>
 <tr>
-<td><strong>6</strong></td>
-<td><strong>Your shadow seems to move unnaturally, even when you’re standing still.</strong></td>
+<td>6</td>
+<td>Your shadow seems to move unnaturally, even when you’re standing still.</td>
 </tr>
 <tr>
-<td><strong>7</strong></td>
-<td><strong>The air around you grows colder when you're upset or concentrating on a spell.</strong></td>
+<td>7</td>
+<td>The air around you grows colder when you're upset or concentrating on a spell.</td>
 </tr>
 <tr>
-<td><strong>8</strong></td>
-<td><strong>Small objects near you—such as leaves or pebbles—appear to decay over time.</strong></td>
+<td>8</td>
+<td>Small objects near you—such as leaves or pebbles—appear to decay over time.</td>
 </tr>
 </tbody>
 </table>
@@ -74,33 +82,30 @@
 <table>
 <thead>
 <tr>
-<th><strong>Sorcerer Level</strong></th>
-<th><strong>Spells</strong></th>
+<th>Sorcerer Level</th>
+<th>Spells</th>
 </tr>
 </thead>
 <tbody>
-  <h4 data-heading="**Level 1: Viritus Spell**" dir="auto"><strong>Level 1: Viritus Spells</strong></h4>
-<p dir="auto">You learn additional spells when you reach certain levels in this class, as shown on the Viritus Spells table. Each of these spells counts as a sorcerer spell for you, but it doesn't count against the number of sorcerer spells you know.
-  Whenever you gain a sorcerer level, you can replace one spell you gained from this feature with another spell of the same level. The new spell must be a Necromancy,  or an Evocation spell from the sorcerer, warlock, or wizard spell list.</p>
 <tr>
-<td><strong>1st</strong></td>
-<td><strong>Inflict Wounds, Thasha´s Caustic Brew, Bane</strong></td>
+<td>1st</td>
+<td>Inflict Wounds, Thasha's Caustic Brew, Bane</td>
 </tr>
 <tr>
-<td><strong>3rd</strong></td>
-<td><strong>Ray of Enfeeblement, Melfs Acid Arrow</strong></td>
+<td>3rd</td>
+<td>Ray of Enfeeblement, Melfs Acid Arrow</td>
 </tr>
 <tr>
-<td><strong>5th</strong></td>
-<td><strong>Spirit Guardian(necrotic Only), Bestow Curse</strong></td>
+<td>5th</td>
+<td>Spirit Guardian (necrotic only), Bestow Curse</td>
 </tr>
 <tr>
-<td><strong>7th</strong></td>
-<td><strong>(Death Ward), Evards Black Tentacles</strong></td>
+<td>7th</td>
+<td>Death Ward, Evards Black Tentacles</td>
 </tr>
 <tr>
-<td><strong>9th</strong></td>
-<td><strong>Negative Energy Flood (antilife shell)</strong></td>
+<td>9th</td>
+<td>Negative Energy Flood, Antilife Shell</td>
 </tr>
 </tbody>
 </table>
@@ -122,7 +127,7 @@
 </ul>
 </li>
 </ul>
-<p dir="auto">At the end of each of the creature’s turns, it can make a  Constitution saving throw against your spell save DC. On a success, the effect ends.</p>
+<p dir="auto">At the end of each of the creature’s turns, it can make a Constitution saving throw against your spell save DC. On a success, the effect ends.</p>
 <p dir="auto">You can use this feature a number of times equal to your Charisma modifier (minimum of once). You regain all expended uses when you finish a long rest.</p>
 <h4 data-heading="**Level 1: Enhanced Vision**" dir="auto"><strong>Level 1: Enhanced Vision</strong></h4>
 <p dir="auto">Your transformation grants you supernatural sight. You can see in darkness (both magical and nonmagical) up to 120 feet.</p>
@@ -148,11 +153,11 @@
 You can use this feature once per long rest.</p>
 <hr>
 <h3 data-heading="**Level 18: Sovereign of Decay**" dir="auto"><strong>Level 18: Sovereign of Decay</strong></h3>
-<p dir="auto">At 18th level, As a Action you can activate the full power of your <strong>Viritus bloodline</strong>, transforming into a being of pure decay and destruction. For 1 minute, you embody the destructive force of your bloodline, and gain the following benefits for 1 Minute:</p>
+<p dir="auto">At 18th level, As a Action you can activate the full power of your&nbsp;<strong>Viritus bloodline</strong>, transforming into a being of pure decay and destruction. For 1 minute, you embody the destructive force of your bloodline, and gain the following benefits for 1 Minute:</p>
 <ul>
 <li dir="auto"><strong>Form of Corrosion</strong>: Your body becomes infused with corrosive energy. Any creature that hits you with a melee attack takes necrotic damage equal to your level.</li>
 <li dir="auto"><strong>Decaying Resilience</strong>: You gain <strong>immunity</strong> to <strong>necrotic</strong> and <strong>acid</strong> damage.</li>
-<li dir="auto"><strong>Unstoppable Decay</strong>: You can cast <strong>Disintegrate</strong> once without expending a spell slot. The spell deals <strong>necrotic or acid</strong> damage instead of force damage. Also each of your <strong>Necrotic</strong> or <strong>Acid</strong> Spell is effected by your <strong>Corrosive Essence Feature</strong> without spending a charge of it </li>
+<li dir="auto"><strong>Unstoppable Decay</strong>: You can cast <strong>Disintegrate</strong> once without expending a spell slot. The spell deals <strong>necrotic or acid</strong> damage instead of force damage. Also each of your&nbsp;<strong>Necrotic</strong>&nbsp;or&nbsp;<strong>Acid</strong>&nbsp;Spell is effected by your&nbsp;<strong>Corrosive Essence Feature</strong>&nbsp;without spending a charge of it.</li>
 <li dir="auto"><strong>Regeneration of the Withered</strong>: At the start of each of your turns while in this form, you regain hit points equal to two times your Charisma modifier (minimum of 1).</li>
 </ul>
 <p dir="auto">Once you use this action, you can't use it again until you finish a long rest, unless you spend 5 Sorcery Points to use it again.</p>
