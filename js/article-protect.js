@@ -2,17 +2,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const isProtected = document.body.dataset.protected === "true";
   if (!isProtected) return;
 
-// Master Password == 1303
-// Tessa ==  7355
-// Draco ==
-// Sera ==
-// Noel ==
-// Felx ==
-// Tim ==
+  // Hier zentral alle Spieler und ihre PINs definieren
+  const playerPins = {
+    Master: "1303",
+    Tessa: "7355",
+    Noel: "2311",
+    Felix: "1301",
+    Tim: "0607",
+    Sera: "2511",
+    Draco: "2305"
+  };
 
-  // Hole erlaubte PINs aus data-attribute (z. B. "1234,5678")
-  const pinListRaw = document.body.dataset.allowedPins || "";
-  const allowedPins = pinListRaw.split(",").map(pin => pin.trim());
+  // Gültige Spieler von der Seite auslesen
+  const allowedPlayersRaw = document.body.dataset.allowedPlayers || "";
+  const allowedPlayers = allowedPlayersRaw.split(",").map(name => name.trim());
+
+  // Erlaubte PINs anhand der Namen ableiten
+  const allowedPins = allowedPlayers
+    .map(player => playerPins[player])
+    .filter(pin => !!pin); // nur gültige PINs behalten
 
   const protectedContent = document.getElementById("protected-content");
   if (protectedContent) protectedContent.style.display = "none";
