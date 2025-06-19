@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const playerPins = {
     Master: "1303",
     Tessa: "7355",
-    Noel: "2311",
+    Noel: "3141",
     Felix: "1301",
     Tim: "0607",
-    Sera: "2511",
+    Sera: "3108",
     Draco: "2305"
   };
 
