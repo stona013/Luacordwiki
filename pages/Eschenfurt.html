@@ -2,10 +2,10 @@
   <meta charset="UTF-8">
   <script src="../js/theme-toggle.js" defer></script>
   <script src="../js/fix-embeds.js" defer></script>
+  <script src="../js/article-protect.js" defer></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="../css/styles.css">
-    <script src="../js/linktest.js" defer></script>
-
+  <script src="../js/linktest.js" defer></script>
 </head>
 
 <header class="custom-header" style="background-color: #17232b;">
@@ -25,17 +25,19 @@
   <a href="Ebenen.html">Die Ebenen der Existenz</a>
   <a href="places.html">Orte</a>
 </div>
-<body>
-  <div class="content">
+<body data-protected="false" data-allowed-players="Master">
+
+  <body>
+    <div class="content" id="protected-content">
   <!-- Überschrift des Eintrags -->
   <h1 class="title">Eschenfurt</h1>
 <p dir="auto"><strong>Lage</strong> Westküste von <a data-href="Ion" href="Ion" class="internal-link" target="_blank" rel="noopener nofollow">Ion</a><br>
-<strong>Zentren</strong> <a data-href="Fürstenben" href="Fürstenben" class="internal-link" target="_blank" rel="noopener nofollow">Fürstenben</a> – Hauptstadt des Kaiserreichs · <a data-href="Yaréan" href="Yaréan" class="internal-link" target="_blank" rel="noopener nofollow">Yaréan</a> – wandelnde Metropole im <a data-href="Faewild" href="Faewild" class="internal-link" target="_blank" rel="noopener nofollow">Faewild</a><br>
+<strong>Zentren</strong> <a data-href="Fürstenben" href="Fürstenben" class="internal-link" target="_blank" rel="noopener nofollow">Fürstenben</a> – Hauptstadt des Kaiserreichs · <a data-href="Yaréan" href="Yaréan" class="internal-link" target="_blank" rel="noopener nofollow">Yaréan</a> – Wandernde Metropole im <a data-href="Faewild" href="Faewild" class="internal-link" target="_blank" rel="noopener nofollow">Faewild</a><br>
 <strong>Regierung</strong> Zweigleisig: streng geführtes Kaiserreich / jahreszeitlich wechselnde Feenhöfe</p>
 <hr>
 <h2 data-heading="Einleitung" dir="auto">Einleitung</h2>
 <p dir="auto">Eschenfurt ist ein Land an der Kante zweier Wirklichkeiten. Im Norden und Westen erstrecken sich die Festungsstädte und Kornfelder des Kaiserreichs von Fürstenben – eine Monarchie, die Ordnung, Wehrhaftigkeit und Handwerk hochhält. Gleich jenseits der <a data-href="Nymerweth-Wälder" href="Nymerweth-Wälder" class="internal-link" target="_blank" rel="noopener nofollow">Nymerweth-Wälder</a> beginnt das <a data-href="Faewild" href="Faewild" class="internal-link" target="_blank" rel="noopener nofollow">Faewild</a>, Heimat der von der Ur-Fee <a data-href="Jahraki" href="Jahraki" class="internal-link" target="_blank" rel="noopener nofollow">Jahraki</a> erschaffenen <a data-href="Faekin" href="Faekin" class="internal-link" target="_blank" rel="noopener nofollow">Faekin</a>. Dort regieren Vier Erzfeen nach den Launen der Jahreszeiten, und Pfade verschieben sich, sobald man ihnen Namen gibt.</p>
-<p dir="auto">Ein dichter, schwankender Nebelgürtel trennt beide Reiche. Wer ihn ohne Führung betritt, kann binnen eines Atemzugs in der Faewilds landen, oder auch einfach wieder im eigenen Kornfeld, eine Stunde älter und um eine Erinnerung ärmer.</p>
+<p dir="auto">Ein dichter, schwankender Nebelgürtel trennt beide Reiche. Wer ihn ohne Führung betritt, kann binnen eines Atemzugs in den Faewilds landen, oder auch einfach wieder im eigenen Kornfeld, eine Stunde älter und um eine Erinnerung ärmer.</p>
 <hr>
 <h2 data-heading="Geographie und Landschaft" dir="auto">Geographie und Landschaft</h2>
 <ul>
@@ -50,8 +52,8 @@ Südlich des Waldes beginnt ein Mosaik aus überwucherter Vegetation, kristallkl
 </ul>
 <hr>
 <h2 data-heading="Regierung und Politik" dir="auto">Regierung und Politik</h2>
-<h3 data-heading="Kaiserreich" dir="auto">Kaiserreich</h3>
-<p dir="auto">Kaiser <strong><a data-href="Thallan Valoreen" href="Thallan Valoreen" class="internal-link" target="_blank" rel="noopener nofollow">Thallan Valoreen</a></strong> herrscht absolut, stützt sich jedoch auf ein fein austariertes Macht-dreieck: den <strong>Hohe Rat</strong> (Adel, Militär und Erzkanzler), den <strong>Gildenbund</strong> (Handels- und Handwerkszünfte) und die <strong>Silbergarde</strong> als persönliche Elitegarde. Offiziell tritt Thallan als nüchterner Reformer auf; heimlich nutzt er seine Kräfte als Erzfee der Stille, um Spannungen im Reich zu dämpfen und fanatische Gegner auszubremsen.</p>
+<h4 data-heading="Kaiserreich" dir="auto">Kaiserreich</h4>
+<p dir="auto">Kaiser <strong><a data-href="Thallan Valoreen" href="Thallan Valoreen" class="internal-link" target="_blank" rel="noopener nofollow">Thallan Valoreen</a></strong> herrscht absolut, stützt sich jedoch auf ein fein austariertes Macht-Dreieck: den <strong>Hohen Rat</strong> (Adel, Militär und Erzkanzler), den <strong>Gildenbund</strong> (Handels- und Handwerkszünfte) und die <strong>Silbergarde</strong> als persönliche Elitegarde. Offiziell tritt Thallan als nüchterner Reformer auf; heimlich nutzt er seine Kräfte als Erzfee der Stille, um Spannungen im Reich zu dämpfen und fanatische Gegner auszubremsen.</p>
 <p dir="auto">Politische Leitlinie:</p>
 <ul>
 <li dir="auto"><strong>Grenz- und Waldedikte</strong> verbieten rücksichtslosen Einschlag im Südrand der <a data-href="Nymerweth-Wälder" href="Nymerweth-Wälder" class="internal-link" target="_blank" rel="noopener nofollow">Nymerweth-Wälder</a> und stellen gemeinsame Patrouillen mit Faekin-Spähern auf.<br>
@@ -60,36 +62,36 @@ Südlich des Waldes beginnt ein Mosaik aus überwucherter Vegetation, kristallkl
 </li>
 <li dir="auto"><strong>Toleranz Schreiben</strong> erleichtern Faekin, die in Reichsstädten leben möchten, den Erwerb von Bürgerrechten.</li>
 </ul>
-<h3 data-heading="Feenhöfe des [[Faewild]]" dir="auto">Feenhöfe des <a data-href="Faewild" href="Faewild" class="internal-link" target="_blank" rel="noopener nofollow">Faewild</a></h3>
+<h4 data-heading="Feenhöfe des [[Faewild]]" dir="auto">Feenhöfe des <a data-href="Faewild" href="Faewild" class="internal-link" target="_blank" rel="noopener nofollow">Faewild</a></h4>
 <ul>
 <li dir="auto"><strong><a data-href="Hof der Blüte" href="Hof der Blüte" class="internal-link" target="_blank" rel="noopener nofollow">Hof der Blüte</a></strong> – Frühling<br>
-Regiert von <strong><a data-href="Iondriel" href="Iondriel" class="internal-link" target="_blank" rel="noopener nofollow">Iondriel</a></strong>, steht dieser Hof für Aufbruch, Erneuerung und unstillbare Neugier. Seine Gefolgsleute begrüßen jede Morgendämmerung mit Liedern im Blütentau und tauschen junge Triebe, kühne Pläne und frisch erzählte Legenden wie andere Völker Münzen.<br>
+Regiert von <strong><a data-href="Aernies" href="Aernies" class="internal-link" target="_blank" rel="noopener nofollow">Aernies</a></strong> , steht dieser Hof für Aufbruch, Erneuerung und unstillbare Neugier. Seine Gefolgsleute begrüßen jede Morgendämmerung mit Liedern im Blütentau und tauschen junge Triebe, kühne Pläne und frisch erzählte Legenden wie andere Völker Münzen.<br>
 </li>
 <li dir="auto"><strong><a data-href="Hof der Brillanz" href="Hof der Brillanz" class="internal-link" target="_blank" rel="noopener nofollow">Hof der Brillanz</a></strong> – Sommer<br>
 Unter der Erzfee <a data-href="Valestia" href="Valestia" class="internal-link" target="_blank" rel="noopener nofollow">Valestia</a> lebt man für Glanz, Leidenschaft und Ruhm. Hier gilt Stärke aller Art als Währung: ein zündendes Gedicht beeindruckt ebenso wie eine gewonnene Klinge. Besuchern wird gastlich Obhut, Wein und Musik geboten – doch wer den Stolz des Hofes verletzt, muss sich in öffentlichen Wettstreiten bewähren oder kostbare Kunst als Buße zahlen.<br>
 </li>
 <li dir="auto"><strong><a data-href="Hof des Wandels" href="Hof des Wandels" class="internal-link" target="_blank" rel="noopener nofollow">Hof des Wandels</a></strong> – Herbst<br>
-Erzfee <a data-href="Lazarus" href="Lazarus" class="internal-link" target="_blank" rel="noopener nofollow">Lazarus</a> führt eine Gesellschaft, die Wandel nicht nur akzeptiert, sondern verlangt. Verträge werden wörtlich erfüllt – doch stets so ausgelegt, dass sich etwas ändert: Besitz, Gestalt oder Meinung. Maskenbälle, Jahrmarktgerichte und Tauschrituale prägen das Hofleben. Eine Bitte wird selten abgelehnt, aber immer zu einem Preis, der den Bittsteller verwandelt.<br>
+Erzfee <a data-href="Lazarus" href="Lazarus" class="internal-link" target="_blank" rel="noopener nofollow">Lazarus</a> führt eine Gesellschaft, die Wandel nicht nur akzeptiert, sondern verlangt. Verträge werden wörtlich erfüllt – doch stets so ausgelegt, dass sich etwas ändert: Besitz, Gestalt oder Meinung. Maskenbälle, Jahrmarkte und Tauschrituale prägen das Hofleben. Eine Bitte wird selten abgelehnt, aber immer zu einem Preis, der den Bittsteller verwandelt.<br>
 </li>
 <li dir="auto"><strong><a data-href="Hof der Stille" href="Hof der Stille" class="internal-link" target="_blank" rel="noopener nofollow">Hof der Stille</a></strong> – Winter<br>
-Formell Thallan Valoreen unterstellt, de facto von seinem Stellvertreter geführt, wahrt dieser Hof Ruhe, Ordnung und Erinnerung. Rituale des Schweigens, Bibliotheken und schneebedeckte Übungshöfe bestimmen den Alltag. Fremde erhalten kühle, aber korrekte Gastfreundschaft. Wer das Gebot der Besonnenheit bricht, wird in lange Meditation oder Dienst am Eiswall geschickt.</li>
+Formell Thallan Valoreen unterstellt, de facto von seinem Stellvertreter <a data-href="Iscelion" href="Iscelion" class="internal-link" target="_blank" rel="noopener nofollow">Iscelion</a> geführt, wahrt dieser Hof Ruhe, Ordnung und Erinnerung. Rituale des Schweigens, Bibliotheken und schneebedeckte Übungshöfe bestimmen den Alltag. Fremde erhalten kühle, aber korrekte Gastfreundschaft. Wer das Gebot der Besonnenheit bricht, wird in lange Meditation oder Dienst am Eiswall geschickt. </li>
 </ul>
 <p dir="auto">Die vier Höfe agieren selbstständig, doch ihr Zyklus hält das Faewild im Gleichgewicht. Freundschaften, Rivalitäten und Allianzen drehen sich mit den Jahreszeiten – manchmal mit dem Tageslicht. Wer von außen verhandeln will, muss nicht nur die Regeln des jeweiligen Hofes kennen, sondern auch spüren, wie rasch eine Laune umschlagen kann.</p>
 <hr>
 <h2 data-heading="Kultur und Gesellschaft" dir="auto">Kultur und Gesellschaft</h2>
-<h3 data-heading="Bei den Faekin" dir="auto">Bei den Faekin</h3>
-<p dir="auto">Magie ist Alltagswerkzeug, Fest und Wanderlust sind Lebensart. Viele schließen sich einem Hof an, doch ebenso viele ziehen alleine durch Wald und Welt, treiben Tauschhandel oder spielen harmlose – manchmal auch gefährliche – Streiche.</p>
-<h3 data-heading="Im Kaiserreich" dir="auto">Im Kaiserreich</h3>
+<h4 data-heading="Bei den Faekin" dir="auto">Bei den Faekin</h4>
+<p dir="auto">Magie ist Alltagswerkzeug, Feier und Wanderlust sind Lebensart. Viele schließen sich einem Hof an, doch ebenso viele ziehen alleine durch Wald und Welt, treiben Tauschhandel oder spielen meist harmlose – manchmal auch gefährliche – Streiche.</p>
+<h4 data-heading="Im Kaiserreich" dir="auto">Im Kaiserreich</h4>
 <p dir="auto">Disziplin und Ausbildung bestimmen den Alltag. Kinder lernen früh Ackerbau, Bogenschießen oder Buchhaltung; wer Talent zeigt, erhält Patronat an Akademien für Kriegsstrategie, Runenschmiedekunst oder Geschichtsschreibung.</p>
-<h3 data-heading="Zusammenleben" dir="auto">Zusammenleben</h3>
+<h4 data-heading="Zusammenleben" dir="auto">Zusammenleben</h4>
 <p dir="auto">Handel, Diplomatie und gelegentliche gemeinsame Feiern überbrücken Misstrauen. Kostbare Kräuter aus dem Faewild sind im Reich ebenso begehrt wie fein geschliffene Klingen bei den Feen.</p>
 <hr>
 <h2 data-heading="Religion und Spiritualität" dir="auto">Religion und Spiritualität</h2>
-<p dir="auto">(WIP)</p>
+<p dir="auto">Eschenfurt kennt keinen Götterdienst. Geistige Praxis zeigt sich in lose überlieferten Feenbräuchen, einfachen Hausritualen und der Kräuter­kunde wandernder Hexenzirkel. Alles bleibt pragmatisch: Schutz, Heilung oder Jahressegen stehen im Vordergrund, Dogmen oder zentrale Tempel fehlen. So teilt sich das Land eine weltnahe Spiritualität, die Menschen und Faekin gleichermaßen praktizieren und stets an lokale Bedürfnisse anpassen.</p>
 <hr>
 <h2 data-heading="Wirtschaft und Ressourcen" dir="auto">Wirtschaft und Ressourcen</h2>
 <ul>
-<li dir="auto"><strong>Ackerbau</strong> – Weizen, Hülsenfrüchte und Reben gedeihen in den fruchtbaren Ebenen; sorgfältige Kompostierung und Bewässerungsgräben halten die Böden ertragreich.<br>
+<li dir="auto"><strong>Waldgärten und Felderränder</strong> – Statt großer Getreideflächen stützen sich die Menschen Eschenfurts auf Obsthaine, Pilzgärten, Wurzelbeete und essbare Sprossen, die zwischen den Baumreihen oder auf kleinen Lichtungen liegen. Kompost aus Laub und Holzresten hält die Waldböden fruchtbar, flache Gräben leiten Regenwasser in trockene Senken.<br>
 </li>
 <li dir="auto"><strong>Forstwirtschaft</strong> – Aus den Nymerweth-Wäldern stammen Bau- und Möbelhölzer; seltene Baumarten unterliegen strengen Schlagquoten.<br>
 </li>
@@ -104,11 +106,14 @@ Formell Thallan Valoreen unterstellt, de facto von seinem Stellvertreter geführ
 <p dir="auto"><strong>Fürstenben</strong><br>
 Die Hauptstadt des Kaiserreichs erhebt sich auf breiten Terrassen über dem Fluss Kael. Im Zentrum thront die <strong>Kaiserfeste Valora</strong> – eine Festung aus hellem Kalkstein, deren dezent polierte Kuppeln das Tageslicht sanft über die Stadt streuen. Akademien für Kriegskunst, Verwaltung und Runenschmiede säumen die geradlinig angelegten Straßen; Marktarkaden voller Steinsäulen und Banner bilden das geschäftige Herz der Metropole. Hier entscheiden Ratssitzungen, Handelsdekrete und kaiserliche Edikte täglich über Wohl und Wehe des Reiches.</p>
 <p dir="auto"><strong>Yaréan</strong><br>
-Als „Wandernde Metropole“ des <a data-href="Faewild" href="Faewild" class="internal-link" target="_blank" rel="noopener nofollow">Faewild</a> erscheint Yaréan mal inmitten blühender Waldkronen, mal auf einer von Mondlicht durchzogenen Lichtung. Ihre Häuser bestehen aus lebendem Holz, das leuchtende Blätter und durchscheinende Kristallbögen treibt. Die Lage der Stadt ändert sich mit Beschlüssen der Feenhöfe: Wenn ein neuer Pakt geschlossen wird oder eine Jahreszeit wechselt, verlagert Yaréan sich an jene Stelle, wo es am besten Passt. Besucher finden dort kein Steinpflaster, sondern Pfade aus silbriger Rinde – und Gesetze, die mit dem Wind umschlagen können.</p>
+Als „Wandernde Metropole“ des <a data-href="Faewild" href="Faewild" class="internal-link" target="_blank" rel="noopener nofollow">Faewild</a> erscheint Yaréan mal inmitten blühender Waldkronen, mal auf einer von Mondlicht durchzogenen Lichtung. Ihre Häuser bestehen aus lebendem Holz, das leuchtende Blätter und durchscheinende Kristallbögen treibt. Die Lage der Stadt ändert sich mit Beschlüssen der Feenhöfe: Wenn ein neuer Pakt geschlossen wird oder eine Jahreszeit wechselt, verlagert Yaréan sich an jene Stelle, wo es am besten Passt. Besucher finden dort kein Steinpflaster, sondern Pfade aus silbriger Rinde – und Gesetze, die mit dem Wind umschlagen können. </p>
 <p dir="auto"><strong>Schleierpfad</strong><br>
 Tief im Südsaum der <a data-href="Nymerweth-Wälder" href="Nymerweth-Wälder" class="internal-link" target="_blank" rel="noopener nofollow">Nymerweth-Wälder</a> windet sich ein Korridor aus dunstigem, bläulichem Nebel. Der Schleierpfad markiert den zuverlässigsten, aber auch trügerischsten Übergang zwischen Materieller Ebene und Faewild. Schritte hallen gedämpft, Schatten scheinen versetzt; selbst erfahrene Waldläufer berichten, dass Kompassnadeln hier taumeln. Wer den Pfad ohne kundige Führung betritt, kann nach einer Minute im Feenreich stehen – oder in einem entlegenen Teil der Wälder, Tage entfernt von jeder Siedlung.</p>
 <p dir="auto"><strong>Glimmervale</strong><br>
 Versteckt zwischen glasigen Bächen und dichtem Farn liegt Glimmervale, ein Dorf, das auf keiner offiziellen Karte verzeichnet ist. Die Bewohner – Meisterglasbläser, Heiler und Pflanzenkundige – beziehen Sand aus den nahen Quarzkämmen und verarbeiten ihn in Öfen zu Fläschchen, Spiegelscheiben und feinsten Lichtkugeln. Man munkelt, die Dorfältesten unterhalten leise Abkommen mit den Feenhöfen: seltene Kräuter und Geschichten gegen Schutz und ein Quäntchen übernatürlichen Glanzes für ihr Glas. Fremden gegenüber sind die Glimmervaler freundlich, bleiben aber verschwiegen, sobald das Gespräch auf ihre Lieferwege oder Verbündeten kommt.</p>
+<hr>
+<h2 data-heading="Siehe auch" dir="auto">Siehe auch</h2>
+<p dir="auto"><a data-href="Nymerweth-Wälder" href="Nymerweth-Wälder" class="internal-link" target="_blank" rel="noopener nofollow">Nymerweth-Wälder</a> · <a data-href="Faewild" href="Faewild" class="internal-link" target="_blank" rel="noopener nofollow">Faewild</a> · <a data-href="Fürstenben" href="Fürstenben" class="internal-link" target="_blank" rel="noopener nofollow">Fürstenben</a> · <a data-href="Hof der Brillanz" href="Hof der Brillanz" class="internal-link" target="_blank" rel="noopener nofollow">Hof der Brillanz</a> · <a data-href="Glimmervale" href="Glimmervale" class="internal-link" target="_blank" rel="noopener nofollow">Glimmervale</a> · <a data-href="Heartbloom" href="Heartbloom" class="internal-link" target="_blank" rel="noopener nofollow">Heartbloom</a></p>
 <hr>
 </div>  
 </body>

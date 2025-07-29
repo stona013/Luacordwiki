@@ -1,28 +1,118 @@
-/* Global Styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  transition: background-color 0.3s, color 0.3s;
-  padding-top: 0; /* Entfernt oberen Abstand */
+/* ========== Kartenlayout ========== */
+
+.map-container {
+  position: relative;
+  width: 1279px;
+  height: 768px;
 }
+
+.worldmap {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.svg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1279px;
+  height: 768px;
+  pointer-events: none; /* deaktiviert Mausereignisse standardmäßig */
+}
+
+.svg-overlay a {
+  pointer-events: auto; /* erlaubt Mausinteraktion für die Links */
+}
+
+.hover-region {
+  transition: fill 0.2s ease;
+}
+
+.hover-region:hover {
+  fill: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+
+/* Nur falls du Pins zusätzlich nutzen willst */
+.pin-label {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
+  pointer-events: none; /* verhindert Hover-Störungen */
+}
+
+.map-pin-text {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 2px black;
+}
+
+.map-pin {
+  width: 12px;
+  height: 12px;
+  background-color: #6e1414;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.7);
+  pointer-events: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.map-pin:hover {
+  transform: scale(1.8);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+  z-index: 10;
+}
+
+.map-preview {
+  display: none;
+  position: absolute;
+  top: -10px;
+  left: -220px;
+  width: 200px;
+  background-color: #1f2f3a;
+  color: white;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.pin-label:hover .map-preview {
+  display: block;
+}
+
+
+/* ========== Farbvariablen ========== */
 
 /* Light Mode (Default) */
 :root {
   --bg-color: #f4f4f4;
-  --text-color: #000;
-  --header-bg-color: #333;
-  --header-text-color: white;
-  --footer-bg-color: #333;
-  --footer-text-color: white;
+  --text-color: #000000;
+  --header-bg-color: #333333;
+  --header-text-color: #ffffff;
+  --footer-bg-color: #333333;
+  --footer-text-color: #ffffff;
   --nav-link-color: white;
-  --nav-link-hover: #ddd;
+  --nav-link-hover: #dddddd;
   --button-bg-color: #2d4453;
   --button-hover-bg-color: #17232b;
-  --list-bg-color: white; /* Hintergrundfarbe der Listen im Light Mode */
-  --list-text-color: black; /* Textfarbe der Listen im Light Mode */
-  --list-border-color: #ddd; /* Randfarbe der Listen im Light Mode */
-  --hr-color: #202020; /* Hellgrau für Light Mode */
+  --list-bg-color: #ffffff;
+  --list-text-color: #000000;
+  --list-border-color: #dddddd;
+  --hr-color: #202020;
+  --table-header-bg: #e0e0e0;
+  --table-header-text: #000000;
 }
 
 /* Dark Mode */
@@ -34,21 +124,135 @@ body {
   --footer-bg-color: #1a1a1a;
   --footer-text-color: #f1f1f1;
   --nav-link-color: #ffffff;
-  --nav-link-hover: #bbb;
+  --nav-link-hover: #bbbbbb;
   --button-bg-color: #2d4453;
   --button-hover-bg-color: #17232b;
-  --list-bg-color: #17232b; /* Hintergrundfarbe der Listen im Dark Mode */
-  --list-text-color: white; /* Textfarbe der Listen im Dark Mode */
-  --list-border-color: #555; /* Randfarbe der Listen im Dark Mode */
-  --hr-color: #c9c9c9; /* Dunkleres Grau für Dark Mode */
+  --list-bg-color: #17232b;
+  --list-text-color: #ffffff;
+  --list-border-color: #555555;
+  --hr-color: #c9c9c9;
+  --table-header-bg: #1f2f3a;
+  --table-header-text: #ffffff;
+}
+
+/* ========== Grundlayout ========== */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.has-navbar-fixed-top {
+  padding-top: 0;
 }
 
 .broken-link {
-    color: gray !important;
-    text-decoration: underline dotted;
+  color: gray !important;
+  text-decoration: underline dotted;
 }
 
+/* ========== Header ========== */
 
+.custom-header {
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
+  position: relative;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 10px;
+}
+
+.custom-header .title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--header-text-color);
+  position: absolute;
+  left: 5px;
+}
+
+.custom-header nav {
+  display: flex;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  gap: 10px;
+}
+
+.custom-header nav a,
+.custom-header nav button {
+  font-size: 1.3rem;
+  padding: 15px 20px;
+  border-radius: 4px;
+  background-color: var(--button-bg-color);
+  color: var(--header-text-color);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.custom-header nav a:hover,
+.custom-header nav button:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+/* ========== Footer ========== */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 42px;
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
+  text-align: center;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+/* ========== Sidebar ========== */
+
+.sidenav {
+  height: calc(100% - 60px - 42px);
+  top: 60px;
+  bottom: 42px;
+  width: 200px;
+  position: fixed;
+  background-color: #2d4453;
+  overflow-y: auto;
+}
+
+.sidenav a {
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.sidenav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* ========== Inhalt ========== */
+
+.content {
+  margin-left: 200px;
+  margin-top: 30px;
+  padding: 20px 20px 60px 20px;
+  overflow-y: auto;
+  height: calc(100vh - 60px - 42px);
+  box-sizing: border-box;
+}
 
 hr {
   border: none;
@@ -57,51 +261,77 @@ hr {
   margin: 20px 0;
 }
 
-/* Apply Theme Variables */
-body {
-  background-color: var(--bg-color);
+/* ========== Standardtexte & Titel ========== */
+
+h1, h2, h3, h4,
+h1[data-heading], h2[data-heading], h3[data-heading], h4[data-heading] {
+  font-family: Arial, sans-serif;
+  font-weight: 700 !important;
+  color: var(--text-color) !important;
+  margin-top: 0.2em;
+  margin-bottom: 0.7em;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+p {
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+ul, ol {
+  margin-left: 1.5em;
+  margin-bottom: 1em;
   color: var(--text-color);
 }
 
-.title, .subtitle {
-  color: var(--text-color);
+li {
+  margin-bottom: 0.4em;
 }
 
-/* Überschreibt die Bulma-Standardfarbe für Titel */
-.content .title {
-  color: var(--text-color); /* Dynamische Textfarbe basierend auf dem Theme */
-  transition: color 0.3s; /* Sanfter Übergang bei Theme-Wechsel */
-}
-
-/* Globale Textfarbe für <strong>-Tags */
 strong {
-  color: var(--text-color); /* Nutzt die dynamische Textfarbe */
-  font-weight: bold; /* Behält das fettgedruckte Styling bei */
-  transition: color 0.3s; /* Weicher Übergang bei Theme-Wechsel */
-}
-
-/* Links Styling */
-.internal-link {
-  color: #227db9f5;
-  text-decoration: none;
+  color: var(--text-color);
   font-weight: bold;
   transition: color 0.3s;
 }
 
-.internal-link:hover {
-  color: #0e2296;
-  text-decoration: underline;
+/* ========== Tabellen ========== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  background-color: #17232b;
+  color: white;
+  border: 1px solid #555;
+  font-size: 0.95rem;
 }
 
-body.dark-mode .internal-link {
-  color: #80dfff;
+thead th {
+  background-color: #1f2f3a !important;
+  color: #ffffff !important;
+  font-weight: bold;
+  padding: 10px 12px;
+  border: 1px solid #555;
 }
 
-body.dark-mode .internal-link:hover {
-  color: #1ab2ff;
+tbody td {
+  padding: 10px 12px;
+  border: 1px solid #555;
+  color: white;
 }
 
-/* Immer schwarzer Button für Startseite */
+tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ========== Buttons ========== */
+
 .button.is-light.is-medium {
   background-color: black !important;
   color: white !important;
@@ -113,7 +343,6 @@ body.dark-mode .internal-link:hover {
   color: white !important;
 }
 
-/* Button Container */
 .button-container {
   display: flex;
   gap: 10px;
@@ -135,156 +364,54 @@ body.dark-mode .internal-link:hover {
   background-color: var(--button-hover-bg-color);
 }
 
-/* Seite ohne Scrollen */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden; /* Kein Scrollen außerhalb des Layouts zulassen */
-}
+/* ========== Links ========== */
 
-/* Flexbox Layout für vollen Bildschirm */
-.section.is-fullheight {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.section {
-  flex-grow: 1;
-}
-
-/* Navbar Fixed Top */
-body.has-navbar-fixed-top {
-  padding-top: 0; /* Entfernt das Padding, das von der fixierten Navbar erzeugt wird */
-}
-
-/* Header Styling */
-.custom-header {
-  background-color: var(--header-bg-color);
-  color: var(--header-text-color);
-  position: relative;
-  height: 60px; /* Höhe des Headers */
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0 10px;
-}
-
-/* Titel Styling (links) */
-.custom-header .title {
-  margin: 1;
-  font-size: 1.5rem;
-  color: var(--header-text-color);
-  position: absolute;
-  left: 5px;
-}
-
-/* Navigation (Buttons) Styling (rechts) */
-.custom-header nav {
-  display: flex;
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  gap: 10px; /* Standardmäßiger Abstand zwischen den Buttons */
-}
-
-/* Stil für Buttons im Header */
-.custom-header nav a, .custom-header nav button {
-  font-size: 1.3rem; /* Kleinere Schriftgröße */
-  padding: 15px 20px; /* Kleinere Buttons */
-  height: auto; /* Automatische Höhe */
-  line-height: 1; /* Kein zusätzlicher Abstand im Text */
-  border-radius: 4px; /* Runde Kanten */
-  background-color: var(--button-bg-color);
-  color: var(--header-text-color);
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.custom-header nav a:hover, .custom-header nav button:hover {
-  background-color: var(--button-hover-bg-color);
-  color: var(--header-text-color);
-}
-
-/* Footer Styling */
-footer {
-  position: fixed; /* Fixiert den Footer am unteren Rand */
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 42px; /* Konsistente Höhe für den Footer */
-  background-color: var(--footer-bg-color);
-  color: var(--footer-text-color);
-  text-align: center;
-  padding: 10px 0;
-  z-index: 1000; /* Sicherstellen, dass der Footer immer oben liegt */
-}
-
-/* Style the side navigation */
-.sidenav {
-  height: calc(100% - 60px - 42px); /* Platz für Header und Footer freihalten */
-  top: 60px; /* Direkt unter dem Header beginnen */
-  bottom: 42px; /* Direkt oberhalb des Footers enden */
-  width: 200px;
-  position: fixed;
-  background-color: #2d4453;
-  overflow-y: auto; /* Falls die Sidebar zu viele Links hat */
-}
-
-/* Side navigation links */
-.sidenav a {
-  color: white;
-  padding: 16px;
+.internal-link {
+  color: #227db9f5;
   text-decoration: none;
-  display: block;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-/* Change color on hover */
-.sidenav a:hover {
-  background-color: #ddd;
-  color: black;
+.internal-link:hover {
+  color: #0e2296;
+  text-decoration: underline;
 }
 
-/* Style the content */
-.content {
-  margin-left: 200px; /* Platz für Sidebar */
-  margin-top: 60px; /* Platz für den Header */
-  padding: 20px; /* Zusätzlicher Innenabstand */
-  overflow-y: auto; /* Scrollbar, falls Inhalt zu groß wird */
-  height: calc(100vh - 60px - 42px); /* Verbleibende Höhe zwischen Header und Footer */
-  box-sizing: border-box; /* Padding wird in die Höhe mit eingerechnet */
+body.dark-mode .internal-link {
+  color: #80dfff;
 }
 
-/* Zentrierte Listen für Orte auf Lua */
+body.dark-mode .internal-link:hover {
+  color: #1ab2ff;
+}
+
+/* ========== Kartenlisten-Layout ========== */
+
 .lists-container {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  flex-wrap: wrap; /* Für responsives Design */
-  margin-top: 30px; /* Abstand zum Titel */
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 .list {
-  flex: 1 1 22%; /* Jede Liste nimmt mindestens 22% der Breite ein */
-  background-color: var(--list-bg-color); /* Hintergrundfarbe basierend auf dem Theme */
-  color: var(--list-text-color); /* Textfarbe basierend auf dem Theme */
+  flex: 1 1 22%;
+  background-color: var(--list-bg-color);
+  color: var(--list-text-color);
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--list-border-color); /* Randfarbe basierend auf dem Theme */
+  border: 1px solid var(--list-border-color);
   text-align: left;
 }
 
-/* Liste Überschrift */
 .list h2 {
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
-/* Listenpunkte ohne Aufzählungszeichen */
 .list ul {
   list-style-type: none;
   padding: 0;
@@ -294,14 +421,15 @@ footer {
   margin-bottom: 8px;
 }
 
-/* Responsives Design für kleinere Bildschirme */
+/* ========== Responsive Anpassung ========== */
+
 @media (max-width: 768px) {
   .lists-container {
     flex-direction: column;
   }
 
   .list {
-    flex: 1 1 100%; /* Jede Liste nimmt jetzt 100% der Breite ein */
+    flex: 1 1 100%;
     margin-bottom: 20px;
   }
 }
