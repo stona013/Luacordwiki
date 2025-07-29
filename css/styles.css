@@ -43,6 +43,13 @@ body {
   --hr-color: #c9c9c9; /* Dunkleres Grau für Dark Mode */
 }
 
+.broken-link {
+    color: gray !important;
+    text-decoration: underline dotted;
+}
+
+
+
 hr {
   border: none;
   height: 1px;
